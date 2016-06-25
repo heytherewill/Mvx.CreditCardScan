@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Mvx.CreditCardScan</id>
+        <version>0.2.0</version>
+        <authors>William Barbosa</authors>
+        <owners>https://raw.githubusercontent.com/willsb/Mvx.CreditCardScan/master/nuspec/Icon.png</owners>
+        <projectUrl>https://github.com/willsb/Mvx.CreditCardScan</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/willsb/Mvx.CreditCardScan/master/nuspec/Icon.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>MvvmCross plugin to scan credit card info using the device's camera</description>
+        <copyright />
+        <language />
+        <tags>mvvm mvvmcross xamarin monodroid mvx credit card creditcard scan credit-card</tags>
+    </metadata>
+    <files>
+        <file src="\\Mac\Home\Projects\CreditCardScan\nuspec\CreditCardScanBootstrap.cs.pp" target="content\MonoAndroid10\Bootstrap\CreditCardScanBootstrap.cs.pp" />
+        <file src="\\Mac\Home\Projects\CreditCardScan\CreditCardScan.Droid\bin\Release\CreditCardScan.dll" target="lib\MonoAndroid10\CreditCardScan.dll" />
+        <file src="\\Mac\Home\Projects\CreditCardScan\CreditCardScan.Droid\bin\Release\CreditCardScan.Droid.dll" target="lib\MonoAndroid10\CreditCardScan.Droid.dll" />
+        <file src="\\Mac\Home\Projects\CreditCardScan\CreditCardScan.Droid\bin\Release\CreditCardScan.dll" target="lib\portable-net45+win+wpa81+wp80\CreditCardScan.dll" />
+    </files>
+</package>
