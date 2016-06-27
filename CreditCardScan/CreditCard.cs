@@ -10,13 +10,11 @@ namespace CreditCardScan
 
 		public string Cvv { get; set; }
 
-		public string Expiry { get; set; }
+		public DateTime ExpirationDate => new DateTime(ExpirationMonth, ExpirationYear, DateTime.DaysInMonth(ExpirationYear, ExpirationMonth));
 
-		public DateTime ExpirationDate => new DateTime(ExpirationMonth, ExpirationYear, 1);
+		public int ExpirationMonth { get; set; } = 1;
 
-		public int ExpirationMonth { get; set; }
-
-		public int ExpirationYear { get; set; }
+		public int ExpirationYear { get; set; } = 1;
 
 		public static readonly CreditCard Empty = new CreditCard();
 	}
