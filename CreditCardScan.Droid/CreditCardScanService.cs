@@ -25,11 +25,11 @@ namespace CreditCardScan.Droid
 
 		private Action<CreditCard> _callback;
 
-		public void ScanCardInfo(Action<CreditCard> callback, CreditCardScanOptions CreditCardScanOptions = null)
+		public void ScanCardInfo(Action<CreditCard> callback, CreditCardScanOptions creditCardScanOptions = null)
 		{
-			if (CreditCardScanOptions == null)
+			if (creditCardScanOptions == null)
 			{
-				CreditCardScanOptions = new CreditCardScanOptions();
+				creditCardScanOptions = new CreditCardScanOptions();
 			}
 
 			_callback = callback;
@@ -37,19 +37,19 @@ namespace CreditCardScan.Droid
 			var context = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
 
 			var intent = new Intent(context, typeof(CardIOActivity));
-			intent.PutExtra(CardIOActivity.ExtraKeepApplicationTheme, CreditCardScanOptions.KeepApplicationTheme);
-			intent.PutExtra(CardIOActivity.ExtraGuideColor, Color.ParseColor(CreditCardScanOptions.GuideColor));
-			intent.PutExtra(CardIOActivity.ExtraUsePaypalActionbarIcon, CreditCardScanOptions.UsePaypalActionbarIcon);
-			intent.PutExtra(CardIOActivity.ExtraHideCardioLogo, CreditCardScanOptions.HideCardioLogo);
-			intent.PutExtra(CardIOActivity.ExtraLanguageOrLocale, CreditCardScanOptions.LanguageOrLocale);
-			intent.PutExtra(CardIOActivity.ExtraScanExpiry, CreditCardScanOptions.ScanExpiry);
-			intent.PutExtra(CardIOActivity.ExtraRequireExpiry, CreditCardScanOptions.RequireExpiry);
-			intent.PutExtra(CardIOActivity.ExtraSuppressManualEntry, CreditCardScanOptions.SuppressManualEntry);
+			intent.PutExtra(CardIOActivity.ExtraKeepApplicationTheme, creditCardScanOptions.KeepApplicationTheme);
+			intent.PutExtra(CardIOActivity.ExtraGuideColor, Color.ParseColor(creditCardScanOptions.GuideColor));
+			intent.PutExtra(CardIOActivity.ExtraUsePaypalActionbarIcon, creditCardScanOptions.UsePaypalActionbarIcon);
+			intent.PutExtra(CardIOActivity.ExtraHideCardioLogo, creditCardScanOptions.HideCardioLogo);
+			intent.PutExtra(CardIOActivity.ExtraLanguageOrLocale, creditCardScanOptions.LanguageOrLocale);
+			intent.PutExtra(CardIOActivity.ExtraScanExpiry, creditCardScanOptions.ScanExpiry);
+			intent.PutExtra(CardIOActivity.ExtraRequireExpiry, creditCardScanOptions.RequireExpiry);
+			intent.PutExtra(CardIOActivity.ExtraSuppressManualEntry, creditCardScanOptions.SuppressManualEntry);
 
 			StartActivityForResult(CreditCardScanRequestCode, intent);
 		}
 
-		public Task<CreditCard> ScanCardInfoAsync(CreditCardScanOptions CreditCardScanOptions = null)
+		public Task<CreditCard> ScanCardInfoAsync(CreditCardScanOptions creditCardScanOptions = null)
 		{
 			var tcs = new TaskCompletionSource<CreditCard>();
 			ScanCardInfo(tcs.SetResult);
@@ -75,7 +75,7 @@ namespace CreditCardScan.Droid
 				};
 			}
 
-			_callback(creditCard);
+			_callback?.Invoke(creditCard);
 		}
 	}
 }
