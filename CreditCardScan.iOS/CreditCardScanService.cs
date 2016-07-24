@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Card.IO;
-using Foundation;
 using MvvmCross.Platform;
 using MvvmCross.Platform.iOS.Views;
 using MvvmCross.Platform.Platform;
@@ -9,7 +8,7 @@ using UIKit;
 
 namespace CreditCardScan.iOS
 {
-	public class CreditCardScanService : NSObject, ICardIOPaymentViewControllerDelegate, ICreditCardScanService
+	public class CreditCardScanService : ICreditCardScanService
 	{
 		internal static void Initialize()
 		{
@@ -17,13 +16,9 @@ namespace CreditCardScan.iOS
 			Mvx.Trace(MvxTraceLevel.Diagnostic, "ICreditCardScanService registered");
 		}
 
-		protected CreditCardScanService() 
-		{
-			_modalHost = Mvx.Resolve<IMvxIosModalHost>();
-		}
+		public CreditCardScanService() { }
 
-		private readonly IMvxIosModalHost _modalHost;
-
+		private IMvxIosModalHost _modalHost;
 		private Action<CreditCard> _callback;
 		private CardIOPaymentViewController _paymentViewController;
 
@@ -35,7 +30,8 @@ namespace CreditCardScan.iOS
 			}
 
 			_callback = callback;
-			_paymentViewController = new CardIOPaymentViewController(this)
+			_modalHost = Mvx.Resolve<IMvxIosModalHost>();
+			_paymentViewController = new CardIOPaymentViewController()
 			{
 				GuideColor = ColorFromHex(creditCardScanOptions.GuideColor)
 			};
