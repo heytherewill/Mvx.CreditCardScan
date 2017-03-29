@@ -1,0 +1,17 @@
+language: csharp
+solution: CreditCardScan.sln
+
+mono:
+ - latest
+env: VERSION=0.3.10
+
+script:
+  - xbuild /p:Configuration=Release CreditCardScan.sln
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - cd nuspec && nuget pack CreditCardScan.nuspec -Version $VERSION -IncludeReferencedProjects -Prop Configuration=Release && nuget push *.nupkg $NUGET_API_KEY -verbosity detailed
+  on:
+    branch: master
