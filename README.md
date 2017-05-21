@@ -1,7 +1,7 @@
 # Mvx.CreditCardScan [![Build Status](https://www.bitrise.io/app/f3633b21cbf1e5e4/status.svg?token=D2-7Qkz8qFqKdfNOyvtT5Q&branch=master)](https://www.bitrise.io/app/f3633b21cbf1e5e4)
 :credit_card: MvvmCross Credit Card Scan Plugin
 
-This plugins wraps [card.io](https://www.card.io/) to make it usable from any [MvvmCross](https://github.com/MvvmCross/MvvmCross). Currently only available for Android
+This plugins wraps [card.io](https://www.card.io/) to make it usable from any [MvvmCross](https://github.com/MvvmCross/MvvmCross).
 
 # Installation
 
