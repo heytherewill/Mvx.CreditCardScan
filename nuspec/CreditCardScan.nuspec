@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Mvx.CreditCardScan</id>
-        <version>0.3.1</version>
+        <version>1.0.0</version>
         <authors>William Barbosa</authors>
         <owners>https://raw.githubusercontent.com/willsb/Mvx.CreditCardScan/master/nuspec/Icon.png</owners>
         <projectUrl>https://github.com/willsb/Mvx.CreditCardScan</projectUrl>
@@ -13,18 +13,11 @@
         <language />
         <tags>mvvm mvvmcross xamarin monodroid mvx credit card creditcard scan credit-card</tags>
         <dependencies>
-            <dependency id="MvvmCross.Platform" version="4.2.2" />
+            <dependency id="MvvmCross.Platform" version="4.4.0" />
         </dependencies>
     </metadata>
     <files>
-        <file src="CreditCardScanBootstrap.cs.pp" target="content\MonoAndroid10\Bootstrap\CreditCardScanBootstrap.cs.pp" />
-        <file src="CreditCardScanBootstrapAction.cs.pp" target="content\Xamarin.iOS10\Bootstrap\CreditCardScanBootstrapAction.cs.pp" />
-        <file src="..\CreditCardScan.Droid\bin\Release\Card.IO.Android.dll" target="lib\MonoAndroid10\Card.IO.Android.dll" />
-        <file src="..\CreditCardScan.Droid\bin\Release\CreditCardScan.dll" target="lib\MonoAndroid10\CreditCardScan.dll" />
-        <file src="..\CreditCardScan.Droid\bin\Release\CreditCardScan.Droid.dll" target="lib\MonoAndroid10\CreditCardScan.Droid.dll" />
-        <file src="..\CreditCardScan\bin\Release\CreditCardScan.dll" target="lib\portable-net45+win+wpa81+wp80\CreditCardScan.dll" />
-        <file src="..\CreditCardScan.iOS\bin\Release\Card.IO.iOS.dll" target="lib\Xamarin.iOS10\Card.IO.iOS.dll" />
-        <file src="..\CreditCardScan.iOS\bin\Release\CreditCardScan.dll" target="lib\Xamarin.iOS10\CreditCardScan.dll" />
-        <file src="..\CreditCardScan.iOS\bin\Release\CreditCardScan.iOS.dll" target="lib\Xamarin.iOS10\CreditCardScan.iOS.dll" />
+        <file src="../build/content/*.*" target="lib" />
+        <file src="../build/lib/*.*" target="lib" />
     </files>
 </package>
