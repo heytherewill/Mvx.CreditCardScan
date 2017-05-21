@@ -2,9 +2,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>Mvx.CreditCardScan</id>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <authors>William Barbosa</authors>
-        <owners>https://raw.githubusercontent.com/willsb/Mvx.CreditCardScan/master/nuspec/Icon.png</owners>
         <projectUrl>https://github.com/willsb/Mvx.CreditCardScan</projectUrl>
         <iconUrl>https://raw.githubusercontent.com/willsb/Mvx.CreditCardScan/master/nuspec/Icon.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -17,7 +16,7 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="../build/content/*.*" target="lib" />
+        <file src="../build/content/*.*" target="content" />
         <file src="../build/lib/*.*" target="lib" />
     </files>
 </package>
