@@ -52,7 +52,14 @@ Task("Pack")
 
 Task("Publish")
     .IsDependentOn("Pack")
-     .Does(() => NuGetPush(GetFiles("*.nupkg").First().FullPath, publishSettings));
+    .Does(() => 
+    {
+        try
+        {
+            NuGetPush(GetFiles("*.nupkg").First().FullPath, publishSettings);
+        }
+        catch(CakeException) { /* Swallow exception if package already exists */}
+    });
 
 //Default Operation
 Task("Default")
