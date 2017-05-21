@@ -16,11 +16,7 @@ var publishSettings = new NuGetPushSettings
     Source = "https://www.nuget.org/api/v2/package", 
 };
 
-Task("Clean")
-    .Does(() => DeleteDirectory("build", recursive: true));
-
 Task("Restore")
-    .IsDependentOn("Clean")
     .Does(() => NuGetRestore(targetProject));
 
 Task("Build")
